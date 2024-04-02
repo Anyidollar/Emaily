@@ -38,5 +38,4 @@ passport.use(
   )
 );
 
-// Middleware to initialize Passport.js
-//   app.use(passport.initialize());
+
