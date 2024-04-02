@@ -4,5 +4,5 @@ module.exports = {
   googleClientID: "",
   googleClientSecret: "",
   mongoURI: "",
-  cookieKey: "",
+  cookieKey: "dkjfhkshfslfhssjhkjsjbkfdlanjfdb,dnzc.sbdkls",
 };
