@@ -1,10 +1,8 @@
 // dev.js Do not commit this files to git.
 
 module.exports = {
-  googleClientID:
-    "",
+  googleClientID: "",
   googleClientSecret: "",
-  mongoURI:
-    "",
+  mongoURI: "",
   cookieKey: "",
 };
