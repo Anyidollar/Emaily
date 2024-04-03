@@ -1,7 +1,7 @@
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
-const keys = require("../config/keys");
 const mongoose = require("mongoose");
+const keys = require("../config/keys");
 
 const User = mongoose.model("users");
 
@@ -14,24 +14,25 @@ passport.deserializeUser((id, done) => {
     done(null, user);
   });
 });
+
 passport.use(
   new GoogleStrategy(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: "https://emaily-dpa4.onrender.com/auth/google/callback",
+      callbackURL: "/auth/google/callback",
       proxy: true,
     },
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ googleId: profile.id }).then((existingUser) => {
         if (existingUser) {
-          //we already have a record with the profile ID
+          // we already have a record with the given profile ID
           done(null, existingUser);
         } else {
-          //we do not have a record with this profile ID, so make a new record
-          new User({ googleId: profile.id }).save().then((user) => {
-            done(null, user);
-          });
+          // we don't have a user record with this ID, make a new record!
+          new User({ googleId: profile.id })
+            .save()
+            .then((user) => done(null, user));
         }
       });
     }
