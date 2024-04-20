@@ -28,10 +28,10 @@ if (process.env.NODE_ENV === "production") {
 
   //Express will serve up index.html file
   //If it doesn't recognise the route
-  const path = require("path");
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
+  // const path = require("path");
+  // app.get("*", (req, res) => {
+  //   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  // });
 }
 
 require("./routes/authRoutes")(app);
