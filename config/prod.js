@@ -7,6 +7,7 @@ module.exports = {
   stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
   stripeSecretKey: process.env.STRIPE_SECRET_KEY,
   mailgunKey: process.env.MAILGUN_KEY,
+  redirectDomain: process.env.REDIRECT_DOMAIN,
 };
 
 // process.env is a global object
