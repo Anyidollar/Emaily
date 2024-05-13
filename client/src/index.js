@@ -1,5 +1,6 @@
 import "materialize-css/dist/css/materialize.min.css";
 import ReactDOM from "react-dom/client";
+import React from "react";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import { thunk as reduxThunk } from "redux-thunk";
