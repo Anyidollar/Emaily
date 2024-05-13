@@ -8,7 +8,10 @@ class SurveyList extends Component {
   }
 
   renderSurveys() {
-    return this.props.surveys.map((survey) => {
+    if (!Array.isArray(this.props.surveys)) {
+      return null; // or return a loading indicator
+    }
+    return this.props.surveys.reverse().map((survey) => {
       return (
         <div className="card darken-1" key={survey._id}>
           <div className="card-content">
